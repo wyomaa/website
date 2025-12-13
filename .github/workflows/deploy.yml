@@ -27,6 +27,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Remove CNAME file if exists
+        run: |
+          if (Test-Path CNAME) { Remove-Item CNAME -Force }
+        shell: pwsh
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
