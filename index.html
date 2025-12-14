@@ -867,6 +867,86 @@
                 width: 200px;
                 height: 200px;
             }
+
+            /* Mobile-specific demo interface fixes */
+            .demo-interface [style*="grid-template-columns: 1fr 1fr"],
+            .demo-interface [style*="grid-template-columns: 2fr 1fr"] {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            .demo-interface [style*="font-size: 9px"] {
+                font-size: 11px !important;
+            }
+
+            .demo-interface [style*="font-size: 10px"] {
+                font-size: 12px !important;
+            }
+
+            .demo-interface [style*="font-size: 11px"] {
+                font-size: 13px !important;
+            }
+
+            .demo-interface [style*="font-size: 8px"] {
+                font-size: 10px !important;
+            }
+
+            /* Hide less critical mobile elements */
+            .demo-interface [style*="border-right: 1px"] {
+                border-right: none !important;
+                border-bottom: 1px solid rgba(0, 240, 255, 0.15) !important;
+                padding-bottom: 16px !important;
+            }
+
+            /* Adjust padding for mobile */
+            .demo-interface > div[style*="padding: 16px"] {
+                padding: 12px !important;
+            }
+
+            .demo-interface > div[style*="padding: 20px"] {
+                padding: 14px !important;
+            }
+
+            /* Fix specific demo layouts for mobile */
+
+            /* AI Estimator - Blueprint + Takeoff split */
+            .demo-interface > div > div[style*="background: rgba(0, 102, 255, 0.03)"] {
+                min-height: 250px !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Virtual Detailer - reduce SVG complexity visibility on mobile */
+            .demo-interface svg[viewBox] {
+                max-height: 300px;
+            }
+
+            /* Planning demos - stack timeline rows */
+            .demo-interface [style*="grid-template-columns: 200px 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .demo-interface [style*="grid-template-columns: repeat(6, 1fr)"] {
+                grid-template-columns: repeat(3, 1fr) !important;
+                font-size: 10px !important;
+            }
+
+            /* Bar chart and data visualizations */
+            .demo-interface [style*="display: grid"][style*="gap: 8px"] > div {
+                font-size: 11px !important;
+            }
+
+            /* Tables and data grids - enable horizontal scroll */
+            .demo-interface > div > div[style*="overflow-y: auto"] {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            /* Industry tabs - ensure full width */
+            .industry-tab {
+                font-size: 10px !important;
+                padding: 10px 20px !important;
+                letter-spacing: 1px !important;
+            }
         }
 
         /* Noise texture overlay */
@@ -937,19 +1017,19 @@
     <section class="container stats">
         <div class="stat-card">
             <div class="stat-number">5</div>
-            <div class="stat-label">AI Products Built</div>
+            <div class="stat-label">Products in Development</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">2</div>
             <div class="stat-label">Industry Verticals</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">$2M+</div>
-            <div class="stat-label">Value Delivered</div>
+            <div class="stat-number">2025</div>
+            <div class="stat-label">First Launch Year</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">100%</div>
-            <div class="stat-label">Enterprise Focus</div>
+            <div class="stat-label">AI-Powered</div>
         </div>
     </section>
 
